@@ -87,7 +87,7 @@ func handleEvent(evt *event.Event) {
 
 			q := content[index:]
 
-			request, err := http.NewRequest("GET", "https://pipedapi.kavin.rocks/search?q="+url.QueryEscape(q), nil)
+			request, err := http.NewRequest("GET", "https://pipedapi.kavin.rocks/search?filter=all&q="+url.QueryEscape(q), nil)
 
 			request.Header.Set("User-Agent", ua)
 
@@ -101,7 +101,7 @@ func handleEvent(evt *event.Event) {
 				log.Panic(err)
 			}
 
-			bArray, err := io.ReadAll(resp.Body)
+			bArray, _ := io.ReadAll(resp.Body)
 
 			var result SearchResult
 
