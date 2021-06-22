@@ -151,7 +151,6 @@ func getEnv(key, fallback string) string {
 // SearchResult is a JSONObject
 type SearchResult struct {
 	Nextpage string `json:"nextpage"`
-	ID       string `json:"id"`
 	Items    []struct {
 		Name      string `json:"name"`
 		Thumbnail string `json:"thumbnail"`
